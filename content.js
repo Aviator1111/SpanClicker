@@ -49,20 +49,22 @@ function removeSpanClicks(spanElements){
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse){
         if(request.message === "span_check"){
-            console.log("load span elements");
-            getSpanElements();
-            console.log("add click event listeners");
-            if(elementsObject.spanElements && elementsObject.spanElements.length > 0){
+            if(!(elementsObject.spanElements && elementsObject.spanElements.length > 0)){ //check if already exists, if so do not load again
+                console.log("load span elements"); 
+                getSpanElements();
+                console.log("add click event listeners");
                 addSpanClicks(elementsObject.spanElements);
             }
+            
         }
         if(request.message === "reset_span"){
-            console.log("remove click event listeners");
             if(elementsObject.spanElements && elementsObject.spanElements.length > 0){
+                console.log("remove click event listeners");
                 removeSpanClicks(elementsObject.spanElements);
+                console.log("remove saved span elements from memory");
+                delete elementsObject.spanElements;
             }
-            console.log("remove span elements");
-            delete elementsObject.spanElements;
+            
         }
    }
 );
