@@ -8,7 +8,7 @@ Instructions to load the extension:
 
 Basic functionality:
 --User can make non empty span elements on the page clickable ("Make Span clickable" button). All non empty span elements are highlighted.
---User can reset the page to its initial state (before making span elements clickable). ("Reset Span Clickable" button)
+--User can reset the page to its initial state i.e. to make span elements not show an alert pop up. ("Reset Span Clickable" button)
 --Clicking on a clickable span element displays a popup alert saying "Made span clickable!!!"
 
 Known Limitation: 
