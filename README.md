@@ -22,3 +22,4 @@ Future Improvements:
 -- Make the highlight more consistent with the use of wrappers over span elements
 -- Currently attaching a click event listener to every non empty span element. We can improve efficiency by parsing the DOM tree and placing wrappers only where necessary.
 -- We can enable or disable extension based on the page content. (only if span elements exist in the page)
+-- Provide feedback for empty span elements or when no span elements exist in the page
