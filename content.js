@@ -1,5 +1,9 @@
 /*dont need to check if document is loaded, by default, chrome
 injects content scripts after DOM is loaded*/ 
+/* leaving console.log statements in, made life easier for me to debug issues
+and therefore not using strict mode */
+
+
 
 var elementsObject = {};
 //function to load span elements into elementsObject 
