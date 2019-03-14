@@ -1,8 +1,18 @@
-//the following function is called whenuser clicks on the browser extension action/icon
-chrome.browserAction.onClicked.addListener(function(tab){
-    //send message to active tab
-    chrome.tabs.query({active:true,currentWindow:true}, function(tabs){
-        var activeTab = tabs[0];
-        chrome.tabs.sendMessage(activeTab.id,{"message":"clicked_icon"});
+
+/*
+chrome.runtime.onInstalled.addListener(function() {
+    
+    chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+      chrome.declarativeContent.onPageChanged.addRules([{
+        conditions: [new chrome.declarativeContent.PageStateMatcher({
+            css: ["span"]
+        })
+        ],
+            actions: [new chrome.declarativeContent.ShowPageAction()]
+      }]);
     });
-});
+  });
+*/
+
+//not really needed as I am using browser action
+// enabling or disabling extension based on the page is not really needed here
