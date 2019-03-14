@@ -20,9 +20,12 @@ function addSpanClicks(spanElements){
 
     for(var i= spanElements.length-1;i>=0;i--){
         var spanElement = spanElements[i];
-        spanElement.style.backgroundColor = "rgba(34,139,34,0.5)";
-        spanElement.style.cursor = "pointer";
-        spanElement.addEventListener("click", onSpanClick); 
+        var spanText = spanElement.innerText || spanElement.textContent;
+        if(spanText.trim() !== ""){
+            spanElement.style.backgroundColor = "rgba(34,139,34,0.5)";
+            spanElement.style.cursor = "pointer";
+            spanElement.addEventListener("click", onSpanClick); 
+        }
     }
 }
 //function that describes what to do when span is clicked
@@ -39,9 +42,12 @@ function removeSpanClicks(spanElements){
 
     for(var i= spanElements.length-1;i>=0;i--){
         var spanElement = spanElements[i];
-        spanElement.style.backgroundColor = "initial";
-        spanElement.style.cursor = "initial";
-        spanElement.removeEventListener("click", onSpanClick); 
+        var spanText = spanElement.innerText || spanElement.textContent;
+        if(spanText.trim() !== ""){
+            spanElement.style.backgroundColor = "initial";
+            spanElement.style.cursor = "initial";
+            spanElement.removeEventListener("click", onSpanClick);
+        } 
     }
 }
 
