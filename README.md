@@ -12,3 +12,12 @@ Basic functionality:
 --Clicking on a clickable span element displays a popup alert saying "Made span clickable!!!"
 
 Note: if span elements have any associated clicks that trigger browser actions (like opening a new tab or reloading a page), such actions are prevented in span clickable mode.
+Note: Does not make empty span elements clickable or highlight them.
+
+Known Issues:
+1. if a span element already has an background color property, extension does not highlight the span element
+
+Future Improvements:
+1. Make the highlight more consistent with the use of wrappers over span elements
+2. Currently attaching a click event listener to every non empty span element. We can improve efficiency by parsing the DOM tree and placing wrappers only where necessary.
+3. We can enable or disable extension based on the page content. (only if span elements exist in the page)
